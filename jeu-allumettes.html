@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style-jeu-allumettes.css" />
+    <script src="script-jeu-allumettes.js" defer></script>
+    <title>Kata_js_4_jeu-allumettes</title>
+  </head>
+  <body>
+    <div class="jeu-container">
+      <h1>🔥 Le Jeu des Allumettes 🔥</h1>
+      <p class="regle">
+        Au debut il y a 50 allumettes. Prenez entre 1 et 6 allumettes. Celui qui
+        prend la dernière <strong>GAGNE</strong> !
+        Venez affronter JORDInateur 🤖 l'impitoyable ordinateur !
+      </p>
+
+      <!---------- Zone d'affichage des messages------------------>
+      <div id="message" class="message-info">
+        joueur 1 c'est à vous. Bonne chance !
+      </div>
+
+      <!---------- Zone où les allumettes vont apparaître-------->
+      <p>Allumettes restantes: <span id="compteur-allumettes"> 50</span></p>
+      <div id="zone-allumettes" class="allumettes-boite"></div>
+      <div id="historique">
+        <h3>Historique des tours</h3>
+        <ul id="liste-tours"></ul>
+      </div>
+
+      <!-- Boutons d'action pour le joueur -->
+      <div class="actions-grid">
+        <button >Prendre 1</button>
+        <button >Prendre 2</button>
+        <button >Prendre 3</button>
+        <button >Prendre 4</button>
+        <button >Prendre 5</button>
+        <button >Prendre 6</button>
+      </div>
+
+      <!-- Bouton pour recommencer (caché au début) -->
+      <button id="btn-rejouer" class="cache">
+        🔄 Recommencer une partie
+      </button>
+    </div>
+  </body>
+  <footer>
+    <p>&copy; 2026 Bounsy Sisouk</p>
+  </footer>
+</html>

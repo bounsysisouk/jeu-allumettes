@@ -1,0 +1,192 @@
+/*------STYLE GENERAL------*/
+*{
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f1ea;
+    color: #333;
+    text-align: center;
+}   
+h1 {
+    color: #8b4513;
+}
+main {
+    max-width: 900px;
+    margin: auto;
+}
+section {
+    background-color: white;
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ---- COMPTEUR ---- */
+
+#compteur-allumettes {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #c0392b;
+}
+
+/* ---- ZONE DES ALLUMETTES ---- */
+
+#zone-allumettes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 20px;
+    min-height: 100px;
+}
+
+/* ---- APPARENCE D'UNE ALLUMETTE ---- */
+
+.allumette {
+    position: relative;
+    width: 7px;
+    height: 55px;
+    background-color: #c18b45;
+    border-radius: 3px;
+}
+
+/* TETE ROUGE DE L'ALLUMETTE  */
+
+.allumette::before {
+    content: "";
+    position: absolute;
+    top: -7px;
+    left: -2px;
+    width: 11px;
+    height: 12px;
+    background-color: #c0392b;
+    border-radius: 50%;
+}
+
+/* ---- BOUTONS DE JEU ---- */
+
+.actions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    max-width: 350px;
+    margin: 20px auto;
+}
+
+button {
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background-color: #8b4513;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+/* ---- BOUTONS EFFET 3D ---- */
+
+.actions-grid button {
+    background: linear-gradient(
+        145deg,
+        #b87333,
+        #8b4513
+    );
+
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+
+    border: none;
+    border-radius: 12px;
+
+    padding: 15px 20px;
+
+    box-shadow:
+        0 6px 0 #542b0c,
+        0 9px 12px rgba(0, 0, 0, 0.25);
+
+    transform: translateY(0);
+
+    transition:
+        transform 0.1s ease,
+        box-shadow 0.1s ease,
+        background 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+    background-color: #a0522d;
+}
+
+button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* ---- BOUTON REJOUER ---- */
+
+#btn-rejouer {
+    background-color: #2f73f1;
+    background: linear-gradient(145deg, #b87333, #8b4513);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    padding: 15px 20px;
+    box-shadow: 0 6px 0 #542b0c, 0 9px 12px rgba(0, 0, 0, 0.25);
+    transform: translateY(0);
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+#btn-rejouer:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 9px 0 #542b0c, 0 12px 15px rgba(0, 0, 0, 0.25);
+    filter: brightness(1.3)
+}
+
+#btn-rejouer:active {
+    transform: translateY(5px);
+    box-shadow: 0 1px 0 #542b0c;
+}
+
+.cache {
+    display: none;
+}
+
+/* Au survol */
+
+.actions-grid button:hover:not(:disabled) {
+    background: linear-gradient(
+        145deg,
+        #d18a45,
+        #a0522d
+    );
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 9px 0 #542b0c,
+        0 12px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* Au clic : le bouton s'enfonce */
+
+.actions-grid button:active:not(:disabled) {
+    transform: translateY(5px);
+
+    box-shadow:
+        0 1px 0 #542b0c,
+        0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Boutons désactivés */
+
+.actions-grid button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: 0 3px 0 #777;
+}
